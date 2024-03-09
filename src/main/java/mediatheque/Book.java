@@ -11,20 +11,21 @@ public class Book extends Item {
 	}
 
 	public String getAuthor() {
-		return author;
+		return this.author;
 	}
 
 	public void setAuthor(String author) {
 		this.author = author;
-	}	
+	}
 
-	public void print() {
-		System.out.println(this);
+	@Override
+	public void accept(ItemVisitor itemVisitor) {
+		itemVisitor.visit(this);
 	}
 
 	@Override
 	public String toString() {
-		return "Book{" + super.toString() + ", author=" + author + '}';
+		return "Book { " + super.toString() + ", author = " + author + " }";
 	}
 	
 	

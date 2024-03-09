@@ -8,17 +8,17 @@ public abstract class Item {
 	}
 
 	public String getTitle() {
-		return title;
+		return this.title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-	public abstract void print() ;
+	public abstract void accept(ItemVisitor itemVisitor);
 
 	@Override
 	public String toString() {
-		return "title=" + title ;
+		return "title = " + title ;
 	}
 	
 }

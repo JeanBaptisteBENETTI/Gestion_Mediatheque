@@ -9,20 +9,20 @@ public class CD extends Item {
 	}
 
 	public int getNumberOfTracks() {
-		return numberOfTracks;
+		return this.numberOfTracks;
 	}
 
 	public void setNumberOfTracks(int numberOfTracks) {
 		this.numberOfTracks = numberOfTracks;
 	}
 
-	public void print() {
-		System.out.println(this);
+	public void accept(ItemVisitor itemVisitor) {
+		itemVisitor.visit(this);
 	}
 
 	@Override
 	public String toString() {
-		return "CD{" + super.toString() + ",numberOfTracks=" + numberOfTracks + '}';
+		return "CD { " + super.toString() + ", numberOfTracks = " + numberOfTracks + " }";
 	}
 	
 }
